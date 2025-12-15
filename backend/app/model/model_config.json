@@ -1,0 +1,4 @@
+{
+  "backbone": "efficientnet_b0",
+  "img_size": 224
+}
