@@ -5,7 +5,7 @@ import io, os
 from PIL import Image
 
 from app.ml.model import FruitVegClassifier
-from app.ml.service import get_top_recipes
+from app.ml.service import get_top_recipes, _get_supabase_client, _recipes_table
 
 MODEL_DIR = os.getenv("MODEL_DIR", "app/model")
 clf = FruitVegClassifier(model_dir=MODEL_DIR)
@@ -55,3 +55,27 @@ async def predict(files: List[UploadFile] = File(...)):
         "recipes": result["recipes"],
         "candidate_count": result["candidate_count"],
     }
+
+
+@app.get("/dbcount")
+def get_db_count():
+    """
+    Get the total number of rows in the Supabase recipes table.
+    """
+    try:
+        sb = _get_supabase_client()
+        table = _recipes_table()
+        
+        # Use count query with head=True to get just the count
+        response = sb.table(table).select("*", count="exact").execute()
+        
+        return {
+            "table": table,
+            "total_rows": response.count
+        }
+    except Exception as e:
+        return {
+            "error": str(e),
+            "table": _recipes_table(),
+            "total_rows": None
+        }
