@@ -75,22 +75,31 @@ const UploadIngredients = () => {
     setError("");
     setLoading(true);
 
-    const uploadID = uuidv4();
-
     try {
-      // Your upload logic here
-      // For now, simulating an upload
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      // Create FormData and append all files
+      const formData = new FormData();
+      recipeFiles.forEach((file) => {
+        formData.append("files", file);
+      });
 
-      console.log("Upload ID:", uploadID);
-      console.log("Recipe Name:", recipeName || "Untitled Recipe");
-      console.log("Files:", recipeFiles);
+      // Make POST request to the predict endpoint
+      const response = await fetch("https://hungr-ai.onrender.com/predict", {
+        method: "POST",
+        body: formData,
+      });
 
-      // Reset form after successful upload
-      setRecipeFiles([]);
-      setRecipeName("");
-      setLoading(false);
-      alert("Recipe images uploaded successfully!");
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log("API Response:", data);
+
+      // Store the response in localStorage to pass to recipes page
+      localStorage.setItem("recipeResults", JSON.stringify(data));
+
+      // Navigate to recipes page
+      window.location.href = "/recipes";
     } catch (error) {
       setError(error instanceof Error ? error.message : "Upload failed");
       setLoading(false);
@@ -224,9 +233,9 @@ const UploadIngredients = () => {
                 <Button
                   type="submit"
                   className="bg-white text-black hover:bg-neutral-200 w-full"
-                  disabled
+                  onClick={handleSubmit}
                 >
-                  Submit
+                  Get Recipes
                 </Button>
               </div>
             )}
