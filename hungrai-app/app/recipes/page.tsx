@@ -376,7 +376,7 @@ const RecipesPage = () => {
                 {selectedRecipe.missing.length > 0 && (
                   <div>
                     <h3 className="text-lg font-semibold mb-3 text-white">
-                      Missing Ingredients
+                      Ingredients Required To Complete Recipe
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {selectedRecipe.missing.map((ingredient, idx) => (
