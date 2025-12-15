@@ -44,7 +44,7 @@ async def predict(files: List[UploadFile] = File(...)):
 
     result = get_top_recipes(
         detected=ingredients,
-        top_n=10,
+        top_n=20,
         limit_per_ingredient=300,
         max_total=2000,
     )
