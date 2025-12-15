@@ -53,7 +53,9 @@ export default function HeroSection() {
               </Link>
 
               <Link
-                href="#"
+                href="https://github.com/binaryshrey/Hungr-AI"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-medium text-white/80 hover:text-white"
               >
                 Learn more <ArrowRight className="h-4 w-4" />
