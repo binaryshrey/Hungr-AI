@@ -174,7 +174,7 @@ const UploadIngredients = () => {
             <a href="/" className="-m-1.5 p-1.5">
               <Image
                 src="/logo.svg"
-                alt="Hungr AI"
+                alt="logo"
                 width={20}
                 height={10}
                 priority
