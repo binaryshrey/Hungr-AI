@@ -12,6 +12,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface Prediction {
   filename: string;
@@ -133,7 +134,13 @@ const RecipesPage = () => {
       <div className="px-6 pt-6 lg:px-8">
         <nav className="flex items-center justify-between">
           <a href="/" className="-m-1.5 p-1.5">
-            <span className="text-2xl font-semibold text-white">Hungr AI</span>
+            <Image
+              src="/logo.svg"
+              alt="Hungr AI"
+              width={20}
+              height={10}
+              priority
+            />
           </a>
           <div className="flex gap-3">
             <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
