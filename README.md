@@ -10,7 +10,10 @@ ECE-GY 6143 · Intro to Machine Learning --- Course Project
 -   **GitHub:** https://github.com/binaryshrey/Hungr-AI\
 -   **Live Demo:** https://hungrai-6143.vercel.app/
 
-
+![Pic 1](https://raw.githubusercontent.com/binaryshrey/Hungr-AI/refs/heads/main/assets/pic1.png)
+![Pic 2](https://raw.githubusercontent.com/binaryshrey/Hungr-AI/refs/heads/main/assets/pic2.png)
+![Pic 3](https://raw.githubusercontent.com/binaryshrey/Hungr-AI/refs/heads/main/assets/pic3.png)
+![Pic 4](https://raw.githubusercontent.com/binaryshrey/Hungr-AI/refs/heads/main/assets/pic4.png)
 
 ## Project Overview
 
