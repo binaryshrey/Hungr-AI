@@ -1,7 +1,6 @@
-# Hungr AI 🍽️
+# Hungr AI 
 
-**Food Ingredient Classification and Recipe Recommendation using CNN and
-Transfer Learning**
+**Food Ingredient Classification and Recipe Recommendation using CNN and Transfer Learning**
 
 ECE-GY 6143 · Intro to Machine Learning --- Course Project
 
@@ -11,23 +10,18 @@ ECE-GY 6143 · Intro to Machine Learning --- Course Project
 -   **GitHub:** https://github.com/binaryshrey/Hungr-AI\
 -   **Live Demo:** https://hungrai-6143.vercel.app/
 
-------------------------------------------------------------------------
+
 
 ## Project Overview
 
-Hungr AI is an end-to-end machine learning web application where users
-upload multiple images of fruits and vegetables, and the system:
+Hungr AI is an end-to-end machine learning web application where users upload multiple images of fruits and vegetables and the system:
 
 1.  Detects the ingredients present in the images (e.g., apple, tomato,
     onion)
 2.  Recommends recipes that best match the detected ingredients
 
-The project demonstrates a complete ML lifecycle: dataset preprocessing,
-CNN-based image classification using transfer learning, model
-evaluation, backend inference serving, database-backed recipe retrieval,
-and frontend deployment.
+The project demonstrates a complete ML lifecycle: dataset preprocessing, CNN-based image classification using transfer learning, model evaluation, backend inference serving, database-backed recipe retrieval and frontend deployment.
 
-------------------------------------------------------------------------
 
 ## Machine Learning Concepts & Methods
 
@@ -39,7 +33,6 @@ and frontend deployment.
 -   Top-1 / Top-3 / Top-5 accuracy
 -   Confusion matrix and error analysis
 
-------------------------------------------------------------------------
 
 ## Tech Stack
 
@@ -64,7 +57,6 @@ and frontend deployment.
 -   Render (API)
 -   Vercel (Frontend)
 
-------------------------------------------------------------------------
 
 ## Data Sources
 
@@ -73,18 +65,17 @@ and frontend deployment.
 -   **Kaggle:** Fruit and Vegetable Image Recognition
     -   36 classes (apple, banana, garlic, etc.)
     -   Used for training the CNN classifier\
-        https://www.kaggle.com/datasets/kritikseth/fruit-and-vegetable-image-recognition
+        Link : https://www.kaggle.com/datasets/kritikseth/fruit-and-vegetable-image-recognition
 
 ### Recipe Dataset
 
 -   **Kaggle:** RecipeNLG
     -   Large-scale recipe dataset
     -   Preprocessed and stored (subset \~200k recipes) in Supabase\
-        https://www.kaggle.com/datasets/paultimothymooney/recipenlg
+        Link : https://www.kaggle.com/datasets/paultimothymooney/recipenlg
 
 All datasets are public and used strictly for academic purposes.
 
-------------------------------------------------------------------------
 
 ## Analysis Plan
 
@@ -96,7 +87,6 @@ resizing and normalization - Light augmentation (flip, rotation)
 **Recipe Dataset** - Safe JSON parsing - Ingredient text normalization -
 CSV export and Supabase ingestion
 
-------------------------------------------------------------------------
 
 ## Labels & Outputs
 
@@ -112,17 +102,13 @@ CSV export and Supabase ingestion
 -   Missing ingredients (optional)
 -   Recipe title and instructions
 
-------------------------------------------------------------------------
 
 ## Feature Engineering
 
-**Vision** - No manual feature extraction - CNN learns features directly
-from pixels
+**Vision** - No manual feature extraction - CNN learns features directly from pixels
 
-**Recipes** - Ingredient normalization - Optional synonym mapping (e.g.,
-capsicum ↔ bell pepper)
+**Recipes** - Ingredient normalization - Optional synonym mapping (e.g., capsicum ↔ bell pepper)
 
-------------------------------------------------------------------------
 
 ## Exploratory Data Analysis
 
@@ -130,7 +116,6 @@ capsicum ↔ bell pepper)
 -   Confusion matrix for similar ingredients
 -   Recipe coverage and ingredient frequency
 
-------------------------------------------------------------------------
 
 ## Model Training & Evaluation
 
@@ -143,7 +128,7 @@ capsicum ↔ bell pepper)
 **Saved Artifacts** - `best_model.pt` - `classes.json` -
 `model_config.json`
 
-------------------------------------------------------------------------
+
 
 ## Model Interpretation
 
@@ -151,7 +136,7 @@ capsicum ↔ bell pepper)
 -   Identification of visually similar classes
 -   Qualitative evaluation of recipe retrieval quality
 
-------------------------------------------------------------------------
+
 
 ## System Architecture
 
@@ -166,18 +151,22 @@ capsicum ↔ bell pepper)
 
 **Concepts:** SPA, async APIs, multipart upload, CORS
 
-------------------------------------------------------------------------
+
 
 ### 2. Backend API (FastAPI)
 
 **Endpoints** - `GET /health` - `POST /predict` - `POST /recipes/search`
 (optional)
 
-**Inference Pipeline** 1. Receive images 2. Preprocess images 3. Run CNN
-inference 4. Merge predicted ingredients 5. Query Supabase recipes 6.
-Rank and return results
+**Inference Pipeline** 
+1. Receive images
+2.  Preprocess images
+3.  Run CNN inference
+4.  Merge predicted ingredients
+5.  Query Supabase recipes
+6.  Rank and return results
 
-------------------------------------------------------------------------
+
 
 ### 3. ML Inference Service
 
@@ -186,7 +175,7 @@ Rank and return results
 -   `torch.no_grad()` for efficiency
 -   Softmax confidence scores
 
-------------------------------------------------------------------------
+
 
 ### 4. Database Layer (Supabase Postgres)
 
@@ -196,7 +185,7 @@ Rank and return results
     -   `TEXT[]` ingredients column
     -   GIN index for fast overlap queries
 
-------------------------------------------------------------------------
+
 
 ### 5. Deployment
 
@@ -207,7 +196,7 @@ Rank and return results
     -   `SUPABASE_URL`
     -   `SUPABASE_SERVICE_ROLE_KEY`
 
-------------------------------------------------------------------------
+
 
 ## Learning Outcomes
 
@@ -217,7 +206,7 @@ Rank and return results
 -   Integrated ML inference with a real database
 -   Deployed a full-stack ML application to production
 
-------------------------------------------------------------------------
+
 
 ## License
 
