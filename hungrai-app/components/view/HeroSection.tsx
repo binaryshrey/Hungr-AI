@@ -31,7 +31,7 @@ export default function HeroSection() {
             </Badge>
 
             <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-4xl -mt-2">
-              Food Ingredient Classification and Recipe Recommondation using CNN
+              Food Ingredient Classification and Recipe Recommendation using CNN
               and Transfer Learning
             </h1>
 
